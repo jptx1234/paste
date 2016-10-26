@@ -143,7 +143,7 @@ pre_install(){
     while true
     do
     echo -e "Please input port for shadowsocks-go [1-65535]:"
-    shadowsocksport="1100"
+    shadowsocksport="6800"
     expr ${shadowsocksport} + 0 &>/dev/null
     if [ $? -eq 0 ]; then
         if [ ${shadowsocksport} -ge 1 ] && [ ${shadowsocksport} -le 65535 ]; then
