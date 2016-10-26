@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="content-type" content="text/html;charset=utf-8">
+    <script type="text/javascript">
+    window.onload=function(){
+        var xmlhttp = null;
+        if (window.XMLHttpRequest) {
+            xmlhttp = new XMLHttpRequest();
+        }
+        if (xmlhttp != null) {
+            xmlhttp.onreadystatechange = function () {
+                if(xmlhttp.readyState==4){     
+                    if(xmlhttp.status==200){     
+                        var resArray=xmlhttp.responseText.split(":");
+                        document.getElementById('info').innerHTML="\""+resArray[0]+"\"<br>\""+resArray[1]+"\"";
+                    }
+                }  
+            };
+            xmlhttp.open("GET", "/cgi-bin/info.cgi?"+Math.random(), true);
+            xmlhttp.send(null);
+        }
+
+    }
+
+
+</script>
+
+</head>
+<body style="background-color: black" align="center">
+
+<center>
+<br><br><br>
+    <h1 style="color:#00ffdc" id="info">正在读取信息</h1>
+  
+</center>
+
+
+</body>
+</html>
+
