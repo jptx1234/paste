@@ -1,5 +1,6 @@
 #!/bin/bash
 echo "Content-type: text/html"
+echo ""
 rawJson=`curl -s -n https://app.arukas.io/api/containers -H "Content-Type: application/vnd.api+json" -H "Accept: application/vnd.api+json" | jq '.data'`
 length=`echo $rawJson | jq "length"`
 addr="lost"
