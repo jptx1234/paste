@@ -1,7 +1,7 @@
 #!/bin/bash
 echo "Content-type: text/html"
 echo ""
-rawJson=`curl -s -n https://app.arukas.io/api/containers -H "Content-Type: application/vnd.api+json" -H "Accept: application/vnd.api+json" | jq '.data'`
+rawJson=`curl -s --user 0e4c9336-ffa8-4358-b9e9-8c9bed7d41da:z7GS7nL9E3sqPPc6eE68seFEaRXwj6F6OwSg4c4WvLbJQ4zkaoIjjP4Zd6R2iJYt https://app.arukas.io/api/containers -H "Content-Type: application/vnd.api+json" -H "Accept: application/vnd.api+json" | jq '.data'`
 length=`echo $rawJson | jq "length"`
 addr="lost"
 port="0"
